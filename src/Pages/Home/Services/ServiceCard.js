@@ -10,7 +10,7 @@ const ServiceCard = ({service}) => {
                 <img src = {image} alt="Shoes" className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">
-                <h2 className="card-title text-2xl">{service_name}
+                <h2 className="card-title text-2xl font-bold">{service_name}
                 </h2>
                 <p className='font-bold text-xl'>Price: {price}</p>
                 <p><span className='font-bold'>Description:</span> {description.slice(0, 100) + '...'} </p>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Services from '../Services/Services';
 import Carousel from '../Carousel/Carousel';
+import Remote from '../Remote/Remote';
 
 
 
@@ -9,6 +10,7 @@ const Home = () => {
         <div>
             <Carousel></Carousel>
             <Services></Services>
+            <Remote></Remote>
         </div>
     );
 };

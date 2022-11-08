@@ -21,13 +21,13 @@ const Services = () => {
                 <p className='text-4xl font-bold text-black text-center py-6'>My Services</p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
-                
+
                 {
-                   services.map(service => <ServiceCard
-                    key={service._id}
-                    service = {service}
-                   
-                   ></ServiceCard>)
+                    services.map(service => <ServiceCard
+                        key={service._id}
+                        service={service}
+
+                    ></ServiceCard>)
                 }
             </div>
 
