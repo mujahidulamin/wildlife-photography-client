@@ -13,9 +13,7 @@ const Header = () => {
         .then(() => {})
         .catch(err => console.error(err))
     }
-
-
-
+    
     const menuItems = <>
         <li className='font-semibold'><Link to={'/home'}>Home</Link></li>
         <li className='font-semibold'><Link to={'/services'}>Services</Link></li>
