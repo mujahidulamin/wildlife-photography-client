@@ -1,9 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
+import ReviewProfile from '../ReviewProfile/ReviewProfile';
 
 const ServiceDetails = () => {
+
 
 
     const location = useLocation()
@@ -12,6 +14,9 @@ const ServiceDetails = () => {
     const services = useLoaderData()
     const { user } = useContext(AuthContext)
     console.log(user);
+
+
+
 
     const { _id, price, image, service_name, description } = services
 
@@ -43,7 +48,7 @@ const ServiceDetails = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.acknowledged){
+                if (data.acknowledged) {
                     toast.success('Review placed successfully')
                     form.reset()
                 }
@@ -51,6 +56,14 @@ const ServiceDetails = () => {
             .catch(error => console.error(error))
     }
 
+    const [reviews, setReviews] = useState([])
+    console.log(reviews);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews?review=${_id}`)
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    }, [_id])
 
 
 
@@ -99,11 +112,20 @@ const ServiceDetails = () => {
                                         </Link>
                                     </button>
 
-                                
 
                                 </>
                         }
                     </div>
+                    
+                    <h2 className='text-3xl text-center font-bold mt-4'>Reviews of this service</h2>
+
+                    {
+                        reviews.map(review => <ReviewProfile
+                            key={review._id}
+                            review = {review}
+                        ></ReviewProfile>)
+                    }
+
                 </div>
             </div>
 
