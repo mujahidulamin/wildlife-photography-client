@@ -12,13 +12,13 @@ const Remote = () => {
             </div>
             <PhotoProvider>
                 <div>
-                    <PhotoView src='http://www.wildlifephoto.com/wp-content/uploads/2015/09/remote-2.jpg'>
-                        <img src="http://www.wildlifephoto.com/wp-content/uploads/2015/09/remote-2.jpg" alt="" />
+                    <PhotoView src='http://www.wildlifephoto.com/wp-content/uploads/2015/09/remote-1.jpg'>
+                        <img src="http://www.wildlifephoto.com/wp-content/uploads/2015/09/remote-1.jpg" alt="" />
                     </PhotoView>
                 </div>
                 <div>
-                    <PhotoView src='http://www.wildlifephoto.com/wp-content/uploads/2015/09/remote-3.jpg'>
-                        <img src="http://www.wildlifephoto.com/wp-content/uploads/2015/09/remote-3.jpg" alt="" />
+                    <PhotoView src='http://www.wildlifephoto.com/wp-content/uploads/2015/09/zambia-3.jpg'>
+                        <img src="http://www.wildlifephoto.com/wp-content/uploads/2015/09/zambia-3.jpg" alt="" />
                     </PhotoView>
                 </div>
                 <div>
