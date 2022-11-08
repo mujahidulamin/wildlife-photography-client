@@ -1,18 +1,47 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
+    const { createUser } = useContext(AuthContext)
+    const [error, setError] = useState('')
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const photoURL = form.photoURL.value
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password, name, photoURL);
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('')
+                form.reset();
+
+            })
+            .catch(error => {
+                console.error('error', error);
+                setError(error.message)
+            })
+    }
+
+
+
     return (
         <div className='flex justify-center items-center pt-8 pb-8'>
             <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
                 <div className='mb-8 text-center'>
-                    <h1 className='my-3 text-4xl font-bold'>Please Register !</h1>
+                    <h1 className='my-3 text-4xl font-bold'>Please Sign Up !</h1>
                     <p className='text-sm text-gray-400'>Create a new account</p>
                 </div>
                 <form
                     noValidate=''
                     action=''
                     className='space-y-12 ng-untouched ng-pristine ng-valid'
+                    onSubmit={handleSubmit}
                 >
                     <div className='space-y-4'>
                         <div>
@@ -30,6 +59,19 @@ const Register = () => {
                         </div>
                         <div>
                             <label htmlFor='email' className='block mb-2 text-sm'>
+                                PhotoURL
+                            </label>
+                            <input
+                                type='text'
+                                name='photoURL'
+                                id='photoURL'
+                                placeholder='Enter Your photoURL required'
+                                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
+                                data-temp-mail-org='0'
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor='email' className='block mb-2 text-sm'>
                                 Email address
                             </label>
                             <input
@@ -39,6 +81,7 @@ const Register = () => {
                                 placeholder='Enter Your Email Here'
                                 className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
                                 data-temp-mail-org='0'
+                                required
                             />
                         </div>
                         <div>
@@ -53,9 +96,15 @@ const Register = () => {
                                 id='password'
                                 placeholder='*******'
                                 className='w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-200 focus:border-gray-900 text-gray-900'
+                                required
                             />
                         </div>
                     </div>
+
+                    {
+                        <span className='text-red-600'>{error}</span>
+                    }
+
                     <div className='space-y-2'>
                         <div>
                             <button
