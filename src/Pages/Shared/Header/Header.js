@@ -13,7 +13,7 @@ const Header = () => {
         .then(() => {})
         .catch(err => console.error(err))
     }
-    
+
     const menuItems = <>
         <li className='font-semibold'><Link to={'/home'}>Home</Link></li>
         <li className='font-semibold'><Link to={'/services'}>Services</Link></li>
@@ -22,7 +22,7 @@ const Header = () => {
             user?.uid ?
               <>
                 <Link to={'/myReviews'} className='font-semibold'>My Reviews</Link>
-                <Link to={'/myReviews'} className='font-semibold'>Add Service</Link>
+                <Link to={'/addService'} className='font-semibold'>Add Service</Link>
                 <button onClick= {handleLogOut}
                   className='border-0 font-semibold'
                 >
