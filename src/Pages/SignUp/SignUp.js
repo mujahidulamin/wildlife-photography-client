@@ -1,8 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import ClimbingBoxLoader from "react-spinners/ClipLoader";
 
 const Register = () => {
+
+    const [loading, setLoading] = useState()
+
+
     const { createUser, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState('')
 
@@ -34,108 +39,130 @@ const Register = () => {
             photoURL: photoURL
         }
         updateUserProfile(profile)
-        .then( () => {})
-        .catch(error => {
-            console.error('error', error);
-        })
+            .then(() => { })
+            .catch(error => {
+                console.error('error', error);
+            })
     }
 
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 800)
+    }, [])
 
 
     return (
-        <div className='flex justify-center items-center pt-8 pb-8'>
-            <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
-                <div className='mb-8 text-center'>
-                    <h1 className='my-3 text-4xl font-bold'>Please Sign Up !</h1>
-                    <p className='text-sm text-gray-400'>Create a new account</p>
-                </div>
-                <form
-                    noValidate=''
-                    action=''
-                    className='space-y-12 ng-untouched ng-pristine ng-valid'
-                    onSubmit={handleSubmit}
-                >
-                    <div className='space-y-4'>
-                        <div>
-                            <label htmlFor='email' className='block mb-2 text-sm'>
-                                Name
-                            </label>
-                            <input
-                                type='text'
-                                name='name'
-                                id='name'
-                                placeholder='Enter Your Name Here'
-                                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
-                                data-temp-mail-org='0'
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor='email' className='block mb-2 text-sm'>
-                                PhotoURL
-                            </label>
-                            <input
-                                type='text'
-                                name='photoURL'
-                                id='photoURL'
-                                placeholder='Enter Your photoURL required'
-                                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
-                                data-temp-mail-org='0'
-                            />
-                        </div>
-                        <div>
-                            <label htmlFor='email' className='block mb-2 text-sm'>
-                                Email address
-                            </label>
-                            <input
-                                type='email'
-                                name='email'
-                                id='email'
-                                placeholder='Enter Your Email Here'
-                                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
-                                data-temp-mail-org='0'
-                                required
-                            />
-                        </div>
-                        <div>
-                            <div className='flex justify-between mb-2'>
-                                <label htmlFor='password' className='text-sm'>
-                                    Password
-                                </label>
+        <div className='flex justify-center items-center'>
+
+            {
+                loading ?
+
+                    <ClimbingBoxLoader
+                        color={'#32A8B3'}
+                        loading={loading}
+                        size={50}
+                    />
+
+                    :
+
+                    <div className='flex justify-center items-center pt-8 pb-8'>
+                        <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
+                            <div className='mb-8 text-center'>
+                                <h1 className='my-3 text-4xl font-bold'>Please Sign Up !</h1>
+                                <p className='text-sm text-gray-400'>Create a new account</p>
                             </div>
-                            <input
-                                type='password'
-                                name='password'
-                                id='password'
-                                placeholder='*******'
-                                className='w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-200 focus:border-gray-900 text-gray-900'
-                                required
-                            />
-                        </div>
-                    </div>
-
-                    {
-                        <span className='text-red-600'>{error}</span>
-                    }
-
-                    <div className='space-y-2'>
-                        <div>
-                            <button
-                                type='submit'
-                                className='w-full px-8 py-3 font-semibold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100'
+                            <form
+                                noValidate=''
+                                action=''
+                                className='space-y-12 ng-untouched ng-pristine ng-valid'
+                                onSubmit={handleSubmit}
                             >
-                                Sign Up
-                            </button>
+                                <div className='space-y-4'>
+                                    <div>
+                                        <label htmlFor='email' className='block mb-2 text-sm'>
+                                            Name
+                                        </label>
+                                        <input
+                                            type='text'
+                                            name='name'
+                                            id='name'
+                                            placeholder='Enter Your Name Here'
+                                            className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
+                                            data-temp-mail-org='0'
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor='email' className='block mb-2 text-sm'>
+                                            PhotoURL
+                                        </label>
+                                        <input
+                                            type='text'
+                                            name='photoURL'
+                                            id='photoURL'
+                                            placeholder='Enter Your photoURL required'
+                                            className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
+                                            data-temp-mail-org='0'
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor='email' className='block mb-2 text-sm'>
+                                            Email address
+                                        </label>
+                                        <input
+                                            type='email'
+                                            name='email'
+                                            id='email'
+                                            placeholder='Enter Your Email Here'
+                                            className='w-full px-3 py-2 border rounded-md border-gray-300 focus:border-gray-900 bg-gray-200 text-gray-900'
+                                            data-temp-mail-org='0'
+                                            required
+                                        />
+                                    </div>
+                                    <div>
+                                        <div className='flex justify-between mb-2'>
+                                            <label htmlFor='password' className='text-sm'>
+                                                Password
+                                            </label>
+                                        </div>
+                                        <input
+                                            type='password'
+                                            name='password'
+                                            id='password'
+                                            placeholder='*******'
+                                            className='w-full px-3 py-2 border rounded-md border-gray-300 bg-gray-200 focus:border-gray-900 text-gray-900'
+                                            required
+                                        />
+                                    </div>
+                                </div>
+
+                                {
+                                    <span className='text-red-600'>{error}</span>
+                                }
+
+                                <div className='space-y-2'>
+                                    <div>
+                                        <button
+                                            type='submit'
+                                            className='w-full px-8 py-3 font-semibold rounded-md bg-gray-900 hover:bg-gray-700 hover:text-white text-gray-100'
+                                        >
+                                            Sign Up
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <p className='px-6 text-sm text-center text-gray-400 mt-8'>
+                                Already have an account yet?{' '}
+                                <Link to={'/login'} className='hover:underline text-gray-600'>
+                                    Log in
+                                </Link>
+                                .
+                            </p>
                         </div>
                     </div>
-                </form>
-                <p className='px-6 text-sm text-center text-gray-400 mt-8'>
-                    Already have an account yet?{' '}
-                    <Link to={'/login'} className='hover:underline text-gray-600'>
-                        Log in
-                    </Link>
-                    .
-                </p>
-            </div>
+
+            }
         </div>
     );
 };

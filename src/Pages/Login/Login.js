@@ -1,10 +1,11 @@
 import { GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import ClimbingBoxLoader from "react-spinners/ClipLoader";
 
 const Login = () => {
-
+    const [loading, setLoading] = useState()
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/';
@@ -46,13 +47,26 @@ const Login = () => {
 
     }
 
-
-
-
-
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 800)
+    }, [])
 
     return (
-        <div className='flex justify-center items-center pt-8 pb-8'>
+        <div className='flex justify-center items-center'>
+
+            {
+                loading ?
+                <ClimbingBoxLoader
+                color={'#32A8B3'}
+                loading={loading}
+                size={50}
+            />
+                :
+
+                <div className='flex justify-center items-center pt-8 pb-8'>
             <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
                 <div className='mb-8 text-center'>
                     <h1 className='my-3 text-4xl font-bold'>Please Log in !</h1>
@@ -140,9 +154,17 @@ const Login = () => {
                     <Link to='/signup' className='hover:underline text-gray-600'>
                         Register
                     </Link>
-                    .
+                    
                 </p>
             </div>
+        </div>
+
+
+            }
+
+
+
+            
         </div>
     );
 };

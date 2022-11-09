@@ -1,11 +1,12 @@
-import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 
 const SingleServiceCard = ({ singleService }) => {
-
+    
     const { _id, price, image, service_name, description } = singleService;
+
+
 
     return (
         <div className="card w-full bg-base-100 shadow-xl mb-8">

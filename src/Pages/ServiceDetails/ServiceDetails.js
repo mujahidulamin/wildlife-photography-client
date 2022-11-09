@@ -6,9 +6,9 @@ import ReviewProfile from '../ReviewProfile/ReviewProfile';
 
 const ServiceDetails = () => {
 
-
+ 
     const [reviews, setReviews] = useState([])
-
+    const [newReview, setNewReview] = useState(false)
     const location = useLocation()
 
 
@@ -52,6 +52,7 @@ const ServiceDetails = () => {
                 if (data.acknowledged) {
                     toast.success('Review placed successfully')
                     form.reset()
+                    setNewReview(true)
                 }
             })
             .catch(error => console.error(error))
@@ -63,8 +64,10 @@ const ServiceDetails = () => {
     useEffect(() => {
         fetch(`https://wildlife-photographer-server.vercel.app/reviews?review=${_id}`)
             .then(res => res.json())
-            .then(data => setReviews(data))
-    }, [_id])
+            .then(data => {
+                setReviews(data)
+            })
+    }, [_id, newReview])
 
 
 

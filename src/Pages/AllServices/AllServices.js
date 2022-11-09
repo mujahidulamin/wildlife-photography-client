@@ -1,22 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SingleServiceCard from './SingleServiceCard';
-
+import ClimbingBoxLoader from "react-spinners/ClipLoader";
 
 const AllServices = () => {
-
+    const [loading, setLoading] = useState(true)
     const allServices = useLoaderData();
-        
+
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 800)
+    }, [])
+
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
-                
-                {
-                   allServices.map(singleService => <SingleServiceCard
-                    key={singleService._id}
-                    singleService = {singleService}
-                   ></SingleServiceCard>)
-                }
-            </div>
+        <div className='flex justify-center items-center'>
+
+            {
+                loading ?
+
+                    <ClimbingBoxLoader
+                        color={'#32A8B3'}
+                        loading={loading}
+                        size={50}
+                    />
+                    :
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
+                        {
+                            allServices.map(singleService => <SingleServiceCard
+                                key={singleService._id}
+                                singleService={singleService}
+                            ></SingleServiceCard>)
+                        }
+                    </div>
+            }
+        </div>
     );
 };
 
