@@ -7,7 +7,8 @@ import ReviewProfile from '../ReviewProfile/ReviewProfile';
 const ServiceDetails = () => {
 
 
-
+    const [reviews, setReviews] = useState([])
+    
     const location = useLocation()
 
 
@@ -56,7 +57,7 @@ const ServiceDetails = () => {
             .catch(error => console.error(error))
     }
 
-    const [reviews, setReviews] = useState([])
+   
     console.log(reviews);
 
     useEffect(() => {

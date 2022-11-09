@@ -2,7 +2,7 @@ import React from 'react';
 
 const ReviewProfile = ({ review }) => {
 
-    const { photo, reviewerName, message, email } = review
+    const { photo, reviewerName, message, email, } = review
 
     return (
         <div>
