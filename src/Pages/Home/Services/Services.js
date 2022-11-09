@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
+    
+  
     const [services, setServices] = useState([])
-
     const navigate = useNavigate()
+
+    useTitle('Service')
 
     useEffect(() => {
         fetch('http://localhost:5000/services')
@@ -13,7 +17,7 @@ const Services = () => {
             .then(data => setServices(data))
     }, [])
 
-
+    
 
     return (
         <div>

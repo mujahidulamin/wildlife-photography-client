@@ -2,11 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import ClimbingBoxLoader from "react-spinners/ClipLoader";
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
 
     const [loading, setLoading] = useState()
-
+    useTitle('Signup')
 
     const { createUser, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState('')

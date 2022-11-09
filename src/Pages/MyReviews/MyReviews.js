@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import MyReviewRow from './MyReviewRow';
 import { toast } from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 
 
@@ -9,6 +10,8 @@ const MyReviews = () => {
 
     const { user } = useContext(AuthContext)
     const [myReviews, setMyReviews] = useState([])
+
+    useTitle('My Reviews')
 
     useEffect(() => {
         fetch(`https://wildlife-photographer-server.vercel.app/myReviews?email=${user.email}`)

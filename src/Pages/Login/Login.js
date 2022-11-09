@@ -3,11 +3,14 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import ClimbingBoxLoader from "react-spinners/ClipLoader";
+import useTitle from './../../hooks/useTitle';
 
 const Login = () => {
     const [loading, setLoading] = useState()
     const navigate = useNavigate()
     const location = useLocation()
+    useTitle('Login')
+
     const from = location.state?.from?.pathname || '/';
 
     const [error, setError] = useState('')
@@ -158,13 +161,7 @@ const Login = () => {
                 </p>
             </div>
         </div>
-
-
             }
-
-
-
-            
         </div>
     );
 };

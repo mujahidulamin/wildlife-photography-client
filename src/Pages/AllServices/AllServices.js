@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SingleServiceCard from './SingleServiceCard';
 import ClimbingBoxLoader from "react-spinners/ClipLoader";
+import useTitle from '../../hooks/useTitle';
 
 const AllServices = () => {
     const [loading, setLoading] = useState(true)
     const allServices = useLoaderData();
-
+    useTitle('Services')
     useEffect(() => {
         setLoading(true)
         setTimeout(() => {

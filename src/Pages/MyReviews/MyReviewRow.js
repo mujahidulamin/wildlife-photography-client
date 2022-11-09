@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { FaTrash } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const MyReviewRow = ({ myReview, handleDelete }) => {
 
-    const {_id , serviceName, reviewerName, photo, message, email, review } = myReview;
+    const { _id, serviceName, reviewerName, photo, message, email, review } = myReview;
 
 
-    
+
 
     return (
         <tr>
@@ -19,7 +20,7 @@ const MyReviewRow = ({ myReview, handleDelete }) => {
                 <div className="flex items-center space-x-3">
                     <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
-                            <img src= {photo} alt="Avatar Tailwind CSS Component" />
+                            <img src={photo} alt="Avatar Tailwind CSS Component" />
                         </div>
                     </div>
                     <div>
@@ -35,7 +36,9 @@ const MyReviewRow = ({ myReview, handleDelete }) => {
             </td>
             <td>{serviceName}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <Link to={`/update/${_id}`}>
+                    <button  className="btn btn-ghost btn-xs">Edit Review </button>
+                </Link>
             </th>
         </tr>
     );

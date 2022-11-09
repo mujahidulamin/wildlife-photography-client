@@ -61,6 +61,7 @@ const ServiceDetails = () => {
 
     console.log(reviews);
 
+    
     useEffect(() => {
         fetch(`https://wildlife-photographer-server.vercel.app/reviews?review=${_id}`)
             .then(res => res.json())
