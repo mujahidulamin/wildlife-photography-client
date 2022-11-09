@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: '/services',
         element: <AllServices></AllServices>,
-        loader: () => fetch('http://localhost:5000/allServices')
+        loader: () => fetch('https://wildlife-photographer-server.vercel.app/allServices')
       },
       {
         path: '/login',
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: '/services/:id',
         element: <ServiceDetails></ServiceDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/allServices/${params.id}`)
+        loader: ({ params }) => fetch(`https://wildlife-photographer-server.vercel.app/allServices/${params.id}`)
       },
       {
         path: '/myReviews',

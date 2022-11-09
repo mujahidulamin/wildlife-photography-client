@@ -19,7 +19,7 @@ const AddService = () => {
             description: description
         }
 
-        fetch('http://localhost:5000/allServices', {
+        fetch('https://wildlife-photographer-server.vercel.app/allServices', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

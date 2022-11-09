@@ -8,7 +8,7 @@ const ServiceDetails = () => {
 
 
     const [reviews, setReviews] = useState([])
-    
+
     const location = useLocation()
 
 
@@ -39,7 +39,7 @@ const ServiceDetails = () => {
             message
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://wildlife-photographer-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -57,11 +57,11 @@ const ServiceDetails = () => {
             .catch(error => console.error(error))
     }
 
-   
+
     console.log(reviews);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?review=${_id}`)
+        fetch(`https://wildlife-photographer-server.vercel.app/reviews?review=${_id}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [_id])
@@ -117,13 +117,13 @@ const ServiceDetails = () => {
                                 </>
                         }
                     </div>
-                    
+
                     <h2 className='text-3xl text-center font-bold mt-4'>Reviews of this service</h2>
 
                     {
                         reviews.map(review => <ReviewProfile
                             key={review._id}
-                            review = {review}
+                            review={review}
                         ></ReviewProfile>)
                     }
 
