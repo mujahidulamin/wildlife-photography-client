@@ -6,7 +6,7 @@ import ReviewProfile from '../ReviewProfile/ReviewProfile';
 
 const ServiceDetails = () => {
 
- 
+
     const [reviews, setReviews] = useState([])
     const [newReview, setNewReview] = useState(false)
     const location = useLocation()
@@ -15,9 +15,6 @@ const ServiceDetails = () => {
     const services = useLoaderData()
     const { user } = useContext(AuthContext)
     console.log(user);
-
-
-
 
     const { _id, price, image, service_name, description } = services
 
@@ -61,7 +58,7 @@ const ServiceDetails = () => {
 
     console.log(reviews);
 
-    
+
     useEffect(() => {
         fetch(`https://wildlife-photographer-server.vercel.app/reviews?review=${_id}`)
             .then(res => res.json())

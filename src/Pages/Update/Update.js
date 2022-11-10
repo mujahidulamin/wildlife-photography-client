@@ -9,8 +9,8 @@ const Update = () => {
 
     const handleUpdateReview = (event) => {
         event.preventDefault();
-        fetch(`http://localhost:5000/reviews/${singleReview._id}`, {
-            method: 'PUT', 
+        fetch(`https://wildlife-photographer-server.vercel.app/reviews/${singleReview._id}`, {
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },

@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       {
         path: '/update/:id',
         element: <Update></Update>,
-        loader: ({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
+        loader: ({ params }) => fetch(`https://wildlife-photographer-server.vercel.app/reviews/${params.id}`)
       },
     ]
   }

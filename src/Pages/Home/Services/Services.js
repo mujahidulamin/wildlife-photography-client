@@ -4,20 +4,20 @@ import useTitle from '../../../hooks/useTitle';
 import ServiceCard from './ServiceCard';
 
 const Services = () => {
-    
-  
+
+
     const [services, setServices] = useState([])
     const navigate = useNavigate()
 
     useTitle('Service')
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://wildlife-photographer-server.vercel.app/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
 
-    
+
 
     return (
         <div>

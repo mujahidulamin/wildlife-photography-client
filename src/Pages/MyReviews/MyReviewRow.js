@@ -1,14 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { } from 'react';
 import { FaTrash } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const MyReviewRow = ({ myReview, handleDelete }) => {
 
-    const { _id, serviceName, reviewerName, photo, message, email, review } = myReview;
-
-
-
-
+    const { _id, serviceName, reviewerName, photo, message, email} = myReview;
+    
     return (
         <tr>
             <th>

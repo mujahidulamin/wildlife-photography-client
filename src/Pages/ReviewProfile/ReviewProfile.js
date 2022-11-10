@@ -2,7 +2,7 @@ import React from 'react';
 
 const ReviewProfile = ({ review }) => {
 
-    const { photo, reviewerName, message, email, } = review
+    const { _id , photo, reviewerName, message, email, } = review
 
     return (
         <div>
@@ -32,7 +32,6 @@ const ReviewProfile = ({ review }) => {
                         <div className='space-y-1'>
                             <span className='flex items-center space-x-2'>
                                 Email: {email}
-                                <span className='text-gray-700'>{ }</span>
                             </span>
                             <span className='flex items-center space-x-2 w-full'>
                                 <span className='text-black text-small'>
