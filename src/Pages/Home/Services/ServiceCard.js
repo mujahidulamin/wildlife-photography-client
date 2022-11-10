@@ -20,7 +20,7 @@ const ServiceCard = ({ service }) => {
             <div className="card-body items-center text-center">
                 <h2 className="card-title text-2xl font-bold">{service_name}
                 </h2>
-                <p className='font-bold text-xl'>Price: {price}</p>
+                <p className='font-bold text-xl'>Price: {price} Taka</p>
                 <p><span className='font-bold'>Description:</span> {description.slice(0, 100) + '...'} </p>
                 <div className="card-actions">
                     <Link to={`/services/${_id}`}>

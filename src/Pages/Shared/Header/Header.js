@@ -1,41 +1,51 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.jpg'
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
 
-    const { user, logOut} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
     const handleLogOut = () => {
         logOut()
-        .then(() => {})
-        .catch(err => console.error(err))
+            .then(() => { })
+            .catch(err => console.error(err))
     }
 
     const menuItems = <>
-        <li className='font-semibold'><Link to={'/home'}>Home</Link></li>
-        <li className='font-semibold'><Link to={'/services'}>Services</Link></li>
-        <li>
-        {
-            user?.uid ?
-              <>
-                <Link to={'/myReviews'} className='font-semibold'>My Reviews</Link>
-                <Link to={'/addService'} className='font-semibold'>Add Service</Link>
-                <button onClick= {handleLogOut}
-                  className='border-0 font-semibold'
-                >
-                  Logout
-                </button>
-              </>
-              :
-              <>
-                  <Link to={'/login'} className='font-semibold'>LogIn</Link>
-              </>
-          }
+        <li className='font-semibold'>
+            <NavLink to={'/home'} className={({ isActive }) =>
+                isActive ? 'active' : undefined
+            }>
+                Home
+            </NavLink>
         </li>
-        <li className='font-semibold'><Link to={'/blog'}>Blog</Link></li>
+        <li className='font-semibold'>
+            <NavLink to={'/services'} >
+                Services
+            </NavLink>
+        </li>
+        <li>
+            {
+                user?.uid ?
+                    <>
+                        <NavLink to={'/myReviews'} className='font-semibold'>My Reviews</NavLink>
+                        <NavLink to={'/addService'} className='font-semibold'>Add Service</NavLink>
+                        <button onClick={handleLogOut}
+                            className='border-0 font-semibold'
+                        >
+                            Logout
+                        </button>
+                    </>
+                    :
+                    <>
+                        <NavLink to={'/login'} className='font-semibold'>LogIn</NavLink>
+                    </>
+            }
+        </li>
+        <li className='font-semibold'><NavLink to={'/blog'}>Blog</NavLink></li>
         <li>
             <div className="tooltip tooltip-bottom z-10" data-tip={user?.displayName}>
                 {
@@ -50,11 +60,8 @@ const Header = () => {
     </>
 
 
-
-
-
     return (
-        <div className='bg-black text-white'>
+        <div className='bg-black sticky top-0 z-50 text-white'>
             <div className="navbar container mx-auto">
                 <div className="flex-1 ">
                     <div className="dropdown">

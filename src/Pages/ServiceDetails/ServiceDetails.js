@@ -87,7 +87,7 @@ const ServiceDetails = () => {
                         {description}
                     </div>
                     <div className='lg:flex lg:justify-between lg:items-center'>
-                        <p className='font-bold text-xl mt-4'>Price: {price}</p>
+                        <p className='font-bold text-xl mt-4'>Price: {price} Taka</p>
                     </div>
                 </div>
             </div>

@@ -45,10 +45,6 @@ const MyReviews = () => {
                 })
         }
     }
-
-
-
-
     return (
         <div>
 
