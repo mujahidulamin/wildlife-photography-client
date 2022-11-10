@@ -10,6 +10,7 @@ import PrivateRoute from './../PrivateRoute/PrivateRoute';
 import AddService from "../../Pages/AddService/AddService";
 import ErrorPage from './../../Pages/ErrorPage/ErrorPage';
 import Update from "../../Pages/Update/Update";
+import Blog from "../../Pages/Blog/Blog";
 
 
 const router = createBrowserRouter([
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
         element: <Update></Update>,
         loader: ({ params }) => fetch(`https://wildlife-photographer-server.vercel.app/reviews/${params.id}`)
       },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
+      }
     ]
   }
 ])

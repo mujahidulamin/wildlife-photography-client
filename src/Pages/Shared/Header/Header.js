@@ -35,7 +35,7 @@ const Header = () => {
               </>
           }
         </li>
-
+        <li className='font-semibold'><Link to={'/blog'}>Blog</Link></li>
         <li>
             <div className="tooltip tooltip-bottom z-10" data-tip={user?.displayName}>
                 {
