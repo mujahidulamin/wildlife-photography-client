@@ -1,22 +1,14 @@
 # Project Name: Wildlife Photographer
 
-## Live Site Link of this project: [Enviable Learning](https://wildlife-photography-5ef21.web.app/)
+## Live Site Link of this project: [Wildlife Photographer](https://wildlife-photography-5ef21.web.app/)
 
 ## Some Features and functionality:
 * This website has authentication system.
-* Email and password authentication, Google authentication, Github authentication have applied.
-* Reset password is also implemented.
-* This website has private route. Without login or register you cannot proceed.
-* This website has pdf feature. You can download your pdf with one click
+* Email and password authentication, Google authentication, 
+* Mongodb is used for storing the data.
+* You can add your service and it will show in the service details page
+* You can give your review for the individual service and you can see the others review also.
+* You can edit you review.
 
-***
-1. List of technologies used.
-   1. React router
-   2. Tailwind Css(daysi ui, mamba ui)
-   3. Google Firebase
-   4. React Icons
-   5. React to pdf
-   6. React hot toast
-   7. 
 
 
