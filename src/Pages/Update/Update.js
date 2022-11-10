@@ -45,7 +45,7 @@ const Update = () => {
 
     return (
         <div>
-            <h2>Update: {singleReview.serviceName}</h2>
+            <h2 className='text-center font-bold text-3xl mt-5'>Update Your Review</h2>
             <form onSubmit={handleUpdateReview} className='my-16'>
                 <textarea onChange={handleChange} name='message' className="textarea textarea-bordered w-full" placeholder="Give your review about this service" required defaultValue={singleReview.message}></textarea>
 
