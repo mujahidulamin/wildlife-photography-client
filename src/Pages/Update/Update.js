@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 
 const Update = () => {
@@ -20,6 +21,9 @@ const Update = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if (data.acknowledged) {
+                    toast.success('Review Updated Successfully')
+                }
             })
 
     }

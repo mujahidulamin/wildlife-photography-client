@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import useTitle from '../../hooks/useTitle';
 
 const AddService = () => {
@@ -30,6 +31,10 @@ const AddService = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                if (data.acknowledged) {
+                    toast.success('Service Added Successfully')
+                    form.reset()
+                }
             })
             .catch(error => console.error(error))
     }
@@ -40,7 +45,7 @@ const AddService = () => {
 
     return (
         <div>
-            <div className=" bg-base-200">
+            <div className="hero bg-base-200">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">
                         <h1 className="text-4xl font-bold">Add a Service</h1>
