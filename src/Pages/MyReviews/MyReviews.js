@@ -8,16 +8,25 @@ import useTitle from '../../hooks/useTitle';
 
 const MyReviews = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
     const [myReviews, setMyReviews] = useState([])
 
     useTitle('My Reviews')
 
     useEffect(() => {
-        fetch(`https://wildlife-photographer-server.vercel.app/myReviews?email=${user.email}`)
-            .then(res => res.json())
+        fetch(`https://wildlife-photographer-server.vercel.app/myReviews?email=${user.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('wildlifePhotographerToken')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    logOut()
+                }
+                return res.json()
+            })
             .then(data => setMyReviews(data))
-    }, [user.email])
+    }, [user.email, logOut])
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you want to cancel this review?')

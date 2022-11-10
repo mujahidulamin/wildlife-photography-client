@@ -113,8 +113,6 @@ const ServiceDetails = () => {
                                             className='text-3xl font-bold' to={'/login'} state={{ from: location }}>Login
                                         </Link>
                                     </button>
-
-
                                 </>
                         }
                     </div>
