@@ -89,7 +89,7 @@ const AddService = () => {
 
 
                             <div className="form-control mt-6">
-                                <input className='btn btn-primary' type="submit" value="Add Service" />
+                                <input className='btn btn-accent' type="submit" value="Add Service" />
                             </div>
                         </form>
                     </div>
