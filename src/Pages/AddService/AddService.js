@@ -45,18 +45,18 @@ const AddService = () => {
 
     return (
         <div>
-            <div className="hero bg-base-200">
-                <div className="hero-content flex-col">
+            <div className="hero bg-base-200 ">
+                <div className="hero-content flex-col my-8 ">
                     <div className="text-center lg:text-left">
                         <h1 className="text-4xl font-bold">Add a Service</h1>
                     </div>
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card  w-full  shadow-2xl bg-base-100 px-16">
                         <form onSubmit={handleAddService} className="card-body">
-                            <div className="form-control">
+                            <div className="form-control ">
                                 <label className="label">
                                     <span className="label-text">Service Name</span>
                                 </label>
-                                <input type="text" placeholder="Service Name" className="input input-bordered"
+                                <input type="text" placeholder="Service Name" className="input input-bordered w-full"
                                     name='serviceName'
                                     required
                                 />
