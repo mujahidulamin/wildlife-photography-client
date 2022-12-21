@@ -3,9 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/logo.jpg'
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { FaUserAlt } from "react-icons/fa";
+import Typewriter from 'typewriter-effect';
 
 const Header = () => {
-
     const { user, logOut } = useContext(AuthContext)
 
     const handleLogOut = () => {
@@ -74,8 +74,21 @@ const Header = () => {
                             }
                         </ul>
                     </div>
+                    
                     <img className='w-24' src={logo} alt="" />
-                    <Link to={'/home'} className="btn btn-ghost normal-case text-xl">Wildlife Photographer</Link>
+                    <Link to={'/home'} className="btn btn-ghost normal-case text-xl">
+                        
+                    <Typewriter
+                            options={{
+                                strings: ['Wildlife Photographer'],
+                                autoStart: true,
+                                loop: true,
+                            }}
+                            
+                        />
+                        
+                        
+                        </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
