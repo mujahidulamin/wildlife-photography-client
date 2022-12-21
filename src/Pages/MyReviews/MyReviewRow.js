@@ -34,7 +34,7 @@ const MyReviewRow = ({ myReview, handleDelete }) => {
             <td>{serviceName}</td>
             <th>
                 <Link to={`/update/${_id}`}>
-                    <button  className="btn btn-ghost btn-xs">Edit Review </button>
+                    <button  className="btn btn-accent btn-xs">Edit Review </button>
                 </Link>
             </th>
         </tr>
