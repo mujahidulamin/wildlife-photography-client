@@ -10,7 +10,7 @@ const MyReviewRow = ({ myReview, handleDelete }) => {
         <tr>
             <th>
                 <label>
-                    <button onClick={() => handleDelete(_id)} className='text-xl'><FaTrash></FaTrash></button>
+                    <button onClick={() => handleDelete(_id)} className='text-xl hover:text-red-600'><FaTrash></FaTrash></button>
                 </label>
             </th>
             <td>

@@ -48,6 +48,10 @@ const MyReviews = () => {
     return (
         <div>
 
+        <h2 className='text-center my-6 font-bold text-4xl text-black'>My All Review</h2>
+
+
+
             {
                 myReviews?.length === 0 ?
                     <>
@@ -55,7 +59,7 @@ const MyReviews = () => {
                     </>
                     :
                     <>
-                        <div className="overflow-x-auto w-full">
+                        <div className="overflow-x-auto mx-6 my-6 ">
                             <table className="table w-full">
                                 <thead>
                                     <tr>
