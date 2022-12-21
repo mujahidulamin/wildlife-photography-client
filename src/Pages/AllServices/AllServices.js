@@ -27,7 +27,7 @@ const AllServices = () => {
                         size={50}
                     />
                     :
-                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
+                    <div className='mx-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
                         {
                             allServices.map(singleService => <SingleServiceCard
                                 key={singleService._id}

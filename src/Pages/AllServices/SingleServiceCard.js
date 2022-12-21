@@ -9,7 +9,7 @@ const SingleServiceCard = ({ singleService }) => {
 
 
     return (
-        <div className="card w-full bg-base-100 shadow-xl mb-8">
+        <div className="card w-full bg-base-100 shadow-xl drop-shadow-xl mb-8 mt-8">
             <PhotoProvider>
                 <figure className="px-10 pt-10">
                     <PhotoView src={image}>
