@@ -20,11 +20,9 @@ const Services = () => {
 
 
     return (
-        <div data-aos="fade-down"
-        data-aos-easing="linear"
-        data-aos-duration="1500">
+        <div >
             <div>
-                <p className='text-4xl font-bold text-black text-center py-6'>My Services</p>
+                <p data-aos="fade-down" className='text-4xl font-bold text-black text-center py-6'>My Services</p>
             </div>
             <div className='mx-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 
