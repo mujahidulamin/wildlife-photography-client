@@ -110,7 +110,7 @@ const ServiceDetails = () => {
                                     <h2 className='text-center text-3xl font-bold'>Please login to add a review</h2>
                                     <button className='flex mx-auto my-5 btn'>
                                         <Link
-                                            className='text-3xl font-bold' to={'/login'} state={{ from: location }}>Login
+                className='text-3xl font-bold' to={'/login'} state={{ from: location }}>Login
                                         </Link>
                                     </button>
                                 </>

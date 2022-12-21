@@ -2,6 +2,10 @@
 
 ## Live Site Link of this project: [Wildlife Photographer](https://wildlife-photography-5ef21.web.app/)
 
+## Admin access Email Password
+
+Email: admin@access.com Password: 123456
+
 ## Some Features and functionality:
 * This website has authentication system.
 * Email and password authentication, Google authentication, 

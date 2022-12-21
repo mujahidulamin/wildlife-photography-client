@@ -158,7 +158,7 @@ const Register = () => {
                                 <Link to={'/login'} className='hover:underline text-gray-600'>
                                     Log in
                                 </Link>
-                                .
+                                
                             </p>
                         </div>
                     </div>
