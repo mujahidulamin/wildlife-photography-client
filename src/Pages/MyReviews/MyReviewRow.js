@@ -1,6 +1,7 @@
 import React, { } from 'react';
 import { FaTrash } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { FaEdit } from "react-icons/fa";
 
 const MyReviewRow = ({ myReview, handleDelete }) => {
 
@@ -34,7 +35,7 @@ const MyReviewRow = ({ myReview, handleDelete }) => {
             <td>{serviceName}</td>
             <th>
                 <Link to={`/update/${_id}`}>
-                    <button  className="btn btn-accent btn-xs">Edit Review </button>
+                    <button  className="btn btn-accent btn-xs"><FaEdit className='mx-1'></FaEdit> Edit Review </button>
                 </Link>
             </th>
         </tr>
