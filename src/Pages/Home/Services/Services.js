@@ -20,11 +20,11 @@ const Services = () => {
 
 
     return (
-        <div data-aos="fade-right">
+        <div>
             <div>
                 <p data-aos="fade-down-left" className='text-4xl font-bold text-black text-center py-6'>My Services</p>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2'>
+            <div data-aos="fade-right" className='mx-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 
                 {
                     services.map(service => <ServiceCard
@@ -34,7 +34,7 @@ const Services = () => {
                 }
             </div>
 
-            <button onClick={() => navigate("/services")} className='btn btn-accent flex mx-auto mb-6'>See All</button>
+            <button data-aos="fade-down-left" onClick={() => navigate("/services")} className='btn btn-accent flex mx-auto mb-6'>See All</button>
         </div>
     );
 };
