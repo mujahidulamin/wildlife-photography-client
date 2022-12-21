@@ -101,14 +101,14 @@ const ServiceDetails = () => {
                                     <form onSubmit={handleReview}>
                                         <textarea name='message' className="textarea textarea-bordered w-full" placeholder="Give your review about this service" required></textarea>
 
-                                        <input type="submit" value="Give Your Review" className='btn flex mx-auto my-4' />
+                                        <input type="submit" value="Give Your Review" className='btn btn-accent flex mx-auto my-4' />
                                     </form>
 
                                 </>
                                 :
                                 <>
                                     <h2 className='text-center text-3xl font-bold'>Please login to add a review</h2>
-                                    <button className='flex mx-auto my-5 btn'>
+                                    <button className='flex mx-auto my-5 btn btn-accent'>
                                         <Link
                 className='text-3xl font-bold' to={'/login'} state={{ from: location }}>Login
                                         </Link>
