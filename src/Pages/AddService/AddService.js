@@ -50,7 +50,7 @@ const AddService = () => {
                     <div className="text-center lg:text-left">
                         <h1 className="text-4xl font-bold">Add a Service</h1>
                     </div>
-                    <div className="card  w-full  shadow-2xl bg-base-100 px-16">
+                    <div className="card shadow-2xl bg-base-100 px-16">
                         <form onSubmit={handleAddService} className="card-body">
                             <div className="form-control ">
                                 <label className="label">

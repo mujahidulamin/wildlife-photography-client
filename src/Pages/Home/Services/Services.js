@@ -20,11 +20,13 @@ const Services = () => {
 
 
     return (
-        <div>
+        <div data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500">
             <div>
-                <p data-aos="fade-down-left" className='text-4xl font-bold text-black text-center py-6'>My Services</p>
+                <p className='text-4xl font-bold text-black text-center py-6'>My Services</p>
             </div>
-            <div data-aos="fade-right" className='mx-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+            <div className='mx-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
 
                 {
                     services.map(service => <ServiceCard
